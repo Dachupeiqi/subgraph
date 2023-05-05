@@ -1,0 +1,55 @@
+specVersion: 0.0.5
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: WorldCup
+    network: goerli
+    source:
+      address: "0xf9FDf6832eEdbAF5A3000A737Fa692838Ee8f8aC"
+      abi: WorldCup
+      startBlock: 8912202
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - ClaimReward
+        - Finialize
+        - Play
+      abis:
+        - name: WorldCup
+          file: ./abis/WorldCup.json
+      eventHandlers:
+        - event: ClaimReward(address,uint256)
+          handler: handleClaimReward
+        - event: Finialize(uint8,uint256)
+          handler: handleFinialize
+        - event: Play(uint8,address,uint8)
+          handler: handlePlay
+      file: ./src/world-cup.ts
+  - kind: ethereum
+    name: WorldCupDistributor
+    network: goerli
+    source:
+      address: "0xe49f175a25046bB3caB9b745583f8c6900CEb4B5"
+      abi: WorldCupDistributor
+      startBlock: 8918073
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - MerkleDistributor
+        - Distribution
+        - NeedToHandle
+        - WCTClaimHistory
+      abis:
+        - name: WorldCupDistributor
+          file: ./abis/WorldCupDistributor.json
+      eventHandlers:
+        - event: Claimed(indexed address,indexed address,indexed uint256,uint256)
+          handler: handleClaimed
+        - event: DistributeReward(indexed bytes32,indexed uint256,uint256,uint256)
+          handler: handleDistributeReward
+      file: ./src/world-cup.ts

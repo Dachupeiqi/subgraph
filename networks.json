@@ -1,0 +1,14 @@
+{
+  "goerli": {
+    "WorldCup": {
+      "address": "0xf9FDf6832eEdbAF5A3000A737Fa692838Ee8f8aC",
+      "startBlock": 8912202
+    },
+    "Contract": {
+      "address": "0xCCf003CeDb66B1ad2A6Bbe0071218499EB1386Be"
+    },
+    "WorldCupDistributor": {
+      "address": "0xCCf003CeDb66B1ad2A6Bbe0071218499EB1386Be"
+    }
+  }
+}
