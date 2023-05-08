@@ -1,14 +1,11 @@
 {
-  "goerli": {
+  "mumbai": {
     "WorldCup": {
-      "address": "0xf9FDf6832eEdbAF5A3000A737Fa692838Ee8f8aC",
-      "startBlock": 8912202
-    },
-    "Contract": {
-      "address": "0xCCf003CeDb66B1ad2A6Bbe0071218499EB1386Be"
+      "address": "0x6F38116237d73237810894c0dbc9d7c786E2EeBd",
+      "startBlock": 35330695
     },
     "WorldCupDistributor": {
-      "address": "0xCCf003CeDb66B1ad2A6Bbe0071218499EB1386Be"
+      "address": "0xA469B9D3E5bB02887325dE6ec527CA657e0C18b1"
     }
   }
 }

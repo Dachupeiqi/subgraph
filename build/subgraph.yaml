@@ -2,13 +2,13 @@ specVersion: 0.0.5
 schema:
   file: schema.graphql
 dataSources:
-  - kind: ethereum
+  - kind: ethereum/contract
     name: WorldCup
-    network: goerli
+    network: mumbai
     source:
-      address: "0xf9FDf6832eEdbAF5A3000A737Fa692838Ee8f8aC"
+      address: "0x6F38116237d73237810894c0dbc9d7c786E2EeBd"
       abi: WorldCup
-      startBlock: 8912202
+      startBlock: 35330695
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -28,13 +28,13 @@ dataSources:
         - event: Play(uint8,address,uint8)
           handler: handlePlay
       file: WorldCup\WorldCup.wasm
-  - kind: ethereum
+  - kind: ethereum/contract
     name: WorldCupDistributor
-    network: goerli
+    network: mumbai
     source:
-      address: "0xe49f175a25046bB3caB9b745583f8c6900CEb4B5"
+      address: "0xA469B9D3E5bB02887325dE6ec527CA657e0C18b1"
       abi: WorldCupDistributor
-      startBlock: 8918073
+      startBlock: 35332739
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
